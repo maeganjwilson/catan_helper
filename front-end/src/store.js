@@ -33,7 +33,11 @@ export default new Vuex.Store({
         .get()
         .then(querySnapshot => {
           querySnapshot.forEach(doc => {
-            commit("addName", { name: doc.data().name, id: doc.data().id });
+            commit("addName", {
+              name: doc.data().name,
+              id: doc.data().id,
+              fbID: doc.id
+            });
             console.log(`${doc.id} => ${doc.data().name}`);
           });
         });
