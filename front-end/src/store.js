@@ -7,7 +7,8 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     allGameNames: [],
-    selectedGame: 0
+    selectedGame: 0,
+    currentGame: {}
   },
   getters: {
     getGameByID: state => {
@@ -23,6 +24,9 @@ export default new Vuex.Store({
     },
     clearGames(state) {
       state.allGameNames = [];
+    },
+    currentGame(state, gameInfo) {
+      state.currentGame = gameInfo;
     }
   },
   actions: {

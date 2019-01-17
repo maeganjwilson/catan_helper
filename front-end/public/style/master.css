@@ -1,4 +1,9 @@
+.link {
+  cursor: pointer;
+}
 .active {
-  background-color: blue;
-  color: white;
+  background-color: rgb(131, 131, 131);
+}
+.scenario {
+  margin: 5px;
 }

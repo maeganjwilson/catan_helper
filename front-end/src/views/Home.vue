@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <h1>Games</h1>
-    <div class="allGames">
+    <div class="allGames" v-if="allGameNames.length">
       <p>Select the game you want to play below. By selecting the game you will be given the proper numbers needed, terrain needed, and outline of the layout for the board.</p>
       <button
         v-for="games in allGameNames"
@@ -9,7 +9,7 @@
         v-on:click="changeSelected(games.id)"
       >{{games.name}}</button>
     </div>
-    <selected-grame v-bind:info="getGameByID"/>
+    <selected-grame v-bind:info="getGameByID" v-if="allGameNames.length"/>
   </div>
 </template>
 
